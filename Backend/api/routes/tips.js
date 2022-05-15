@@ -24,8 +24,8 @@ router.get('/',(req, res) =>{
  });
 
  router.put('/:id',(req, res)=>{
-    tips.findByIdAndUpdate(req.body.id, req.body)
-    .then(x => res.status(204).send(x))
+    tips.findByIdAndUpdate(req.params.id, req.body)
+    .then(() => res.sendStatus(204))
  });
 
  router.delete('/:id',(req,res)=>{
